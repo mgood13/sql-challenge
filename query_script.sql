@@ -53,3 +53,29 @@ where employees.emp_no in (
 		where dept_name = 'Sales'
 	)
 )
+
+
+-- This function accomplishes an identical task to the one above except that it adds in the people who are in the Development
+-- group as well.
+select employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
+from employees
+inner join dept_emp on dept_emp.emp_no = employees.emp_no
+inner join departments on departments.dept_no = dept_emp.dept_no
+where employees.emp_no in (
+	
+	select emp_no
+	from dept_emp
+	where dept_no in (
+
+		select dept_no
+		from departments
+		where dept_name = 'Sales'
+		or dept_name = 'Development'
+	)
+)
+
+-- Count the frequency of each last name and sort in descending order
+select last_name, count(*)
+from   employees
+group by last_name
+order by count desc
