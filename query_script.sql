@@ -13,7 +13,17 @@ from employees
 where hire_date like '%1986'
 
 -- List out the manager of each department
+-- This is accomplished by first selecting the columns that need to appear in our final table, then identifying our "base"
+-- table, this is the one that we are joining into. Next we match department names with the department numbers in dept_manager.
+-- Finally we add in the employee information for each manager.
 select dept_manager.dept_no, departments.dept_name, employees.emp_no, employees.last_name, employees.first_name
 from dept_manager
 inner join departments on departments.dept_no = dept_manager.dept_no
 inner join employees on employees.emp_no = dept_manager.emp_no
+
+-- List out the department of every employee
+-- This is accomplished by first matching every employee to a department and then merging in the name of the department.
+select employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
+from employees
+inner join dept_emp on dept_emp.emp_no = employees.emp_no
+inner join departments on departments.dept_no = dept_emp.dept_no
