@@ -27,3 +27,29 @@ select employees.emp_no, employees.last_name, employees.first_name, departments.
 from employees
 inner join dept_emp on dept_emp.emp_no = employees.emp_no
 inner join departments on departments.dept_no = dept_emp.dept_no
+
+
+-- Herculean effort: List out all the employees whose first name is Hercules and whose last name starts with B
+select last_name, first_name, sex
+from employees
+where first_name = 'Hercules'
+and last_name like 'B%'
+
+-- Select all of the people in the sales department and list their numbers, names, and departments
+-- Some employees appear twice because they appear in multiple departments
+
+select employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
+from employees
+inner join dept_emp on dept_emp.emp_no = employees.emp_no
+inner join departments on departments.dept_no = dept_emp.dept_no
+where employees.emp_no in (
+	
+	select emp_no
+	from dept_emp
+	where dept_no in (
+
+		select dept_no
+		from departments
+		where dept_name = 'Sales'
+	)
+)
