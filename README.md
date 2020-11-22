@@ -12,4 +12,6 @@
 
 
 ![Database Structure](/Database_Structure.png)
-<p align = "center"> Database Structure Diagram </p>
+<p align = "center"> **Database Structure Diagram** </p>
+
+## *The Twist*
