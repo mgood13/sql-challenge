@@ -25,10 +25,4 @@ We bring our findings to our boss who applauds our discovery and encourages us t
 |----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----|
 |499942 | e0004 | 1/10/1963 | April | Foolsday | F | 2/10/1997 | 40000 | 40k|
 
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
-
-
 One can only hope that our next project will involve some real data.
