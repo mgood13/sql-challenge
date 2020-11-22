@@ -21,8 +21,8 @@
 We bring our findings to our boss who applauds our discovery and encourages us to look up ourselves in the dataset. We do so and find:
 
 
-|emp_no | emp_title_id | birth_date | first_name | last_name | sex | hire_date | salary | salary_bin|
-|----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----|
-|499942 | e0004 | 1/10/1963 | April | Foolsday | F | 2/10/1997 | 40000 | 40k|
+|emp_no | emp_title_id | birth_date | first_name | last_name | sex | hire_date |
+|----- | ----- | ----- | ----- | ----- | ----- | ----- |
+|499942 | e0004 | 1/10/1963 | April | Foolsday | F | 2/10/1997 |
 
 One can only hope that our next project will involve some real data.
